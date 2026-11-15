@@ -74,7 +74,8 @@ Promotion to `supported` needs the test, sample size and both date ranges writte
 2. Compare what was expected with what happened. Note which signals, regime calls and correlation assumptions held and which did not.
 3. Update `knowledge.jsonl`: add new hypotheses, add evidence to existing entries, retire entries past `review_by` that no longer hold.
 4. Run `kb.py metrics`, then `kb.py backup <scratchpad>`, then `kb.py validate`.
-5. Commit the `knowledge/` folder and push to the working branch. If the push fails after four retries, flag it in the log and carry on; never let this block position management.
+5. Commit the `knowledge/` folder and push to the working branch. Retry up to four times only for network errors. If the push is refused or still fails, flag it once that day in the log and carry on; never let this block position management.
+6. Mirror the folder into the scratchpad as a second local copy: `rm -rf <scratchpad>/knowledge_mirror && cp -r knowledge <scratchpad>/knowledge_mirror`. If this folder is ever missing and the branch cannot be fetched, copy the mirror back.
 
 **Friday afternoon, in addition.** Test one open hypothesis on broker history. Write the rule first, explore on the earliest 70% of dates, confirm on the latest 30%, and record the sample size and how many variants were tried. Review `proposals.md`.
 
