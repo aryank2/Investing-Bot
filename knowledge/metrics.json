@@ -51,8 +51,8 @@
     "unrated": 7
   },
   "rejections_resolved": {
-    "n": 1,
-    "avoided_loss": 0
+    "n": 2,
+    "avoided_loss": 1
   },
   "equity": {
     "first": [
@@ -60,7 +60,7 @@
       101.91
     ],
     "last": [
-      "2026-11-19",
+      "2026-11-23",
       101.91
     ],
     "max_drawdown_pct": 0.0,
